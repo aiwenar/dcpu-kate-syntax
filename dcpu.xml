@@ -1,0 +1,72 @@
+<?xm version="1.0" ecnoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "language.dtd">
+<language name="DCPU assembly"
+          section="Assembler"
+          version="0.1"
+          kateversion="2.3"
+          extensions="*.dasm"
+          mimetype=""
+          author="Krzysztof Mędrzycki"
+          licence="GNU GLP v3" >
+  <highlighting>
+    <list name="registers">
+      <item>a</item>
+      <item>b</item>
+      <item>c</item>
+      <item>x</item>
+      <item>y</item>
+      <item>z</item>
+      <item>i</item>
+      <item>j</item>
+    </list>
+    <list name="instructions">
+      <item>set</item>
+      <item>add</item>
+      <item>sub</item>
+      <item>mul</item>
+      <item>div</item>
+      <item>mod</item>
+      <item>shl</item>
+      <item>shr</item>
+      <item>and</item>
+      <item>bor</item>
+      <item>xor</item>
+      <item>ife</item>
+      <item>ifn</item>
+      <item>ifg</item>
+      <item>ifb</item>
+      <item>jsr</item>
+    </list>
+    
+    <contexts>
+      <context name="Normal" attribute="Normal Text" lineEndContext="#stay">
+        <keyword attribute="Registers" context="#stay" String="registers" />
+        <keyword attribute="Instructions" context="#stay" String="instructions" />
+        <DetectChar attribute="Comment" context="Comment" char=";" />
+        <AnyChar attribute="String" context="String" String="&quot;'" />
+        <RegExpr attribute="Label" context="#stay" String="^\s*:[A-Za-z0-9_.$]+" />
+        <RegExpr attribute="Number" context="#stay" insensitive="TRUE" String="0[x|X][0-9a-fA-F]+" />
+      </context>
+      <context name="Comment" attribute="Comment" lineEndContext="#pop" />
+      <context name="String" attribute="String" lineEndContext="#pop">
+        <AnyChar attribute="Stirng" context="#pop" String="&quot;'" />
+      </context>
+    </contexts>
+
+    <itemDatas>
+      <itemData name="Normal Text" defStyleNum="dsNormal" />
+      <itemData name="Registers" defStyleNum="dsDataType" />
+      <itemData name="Instructions" defStyleNum="dsKeyword" />
+      <itemData name="Comment" defStyleNum="dsComment" />
+      <itemData name="Label" defStyleNum="dsFunction" />
+      <itemData name="Number" defStyleNum="dsDecVal" />
+      <itemData name="String" defStyleNum="dsString" />
+    </itemDatas>
+  </highlighting>
+  <general>
+    <keyword casesensitive="0" />
+    <comments>
+      <comment name="singleLine" start=";" />
+    </comments>
+  </general>
+</language>
