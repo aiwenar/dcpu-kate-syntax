@@ -2,7 +2,7 @@
 <!DOCTYPE language SYSTEM "language.dtd">
 <language name="DCPU assembly"
           section="Assembler"
-          version="0.1"
+          version="0.2"
           kateversion="2.3"
           extensions="*.dasm"
           mimetype=""
@@ -18,24 +18,45 @@
       <item>z</item>
       <item>i</item>
       <item>j</item>
+      <item>pc</item>
+      <item>sp</item>
+      <item>ex</item>
     </list>
     <list name="instructions">
       <item>set</item>
       <item>add</item>
       <item>sub</item>
       <item>mul</item>
+      <item>mli</item>
       <item>div</item>
+      <item>dvi</item>
       <item>mod</item>
-      <item>shl</item>
-      <item>shr</item>
       <item>and</item>
       <item>bor</item>
       <item>xor</item>
+      <item>shr</item>
+      <item>asr</item>
+      <item>shl</item>
+      <item>sti</item>
+      <item>ifb</item>
+      <item>ifc</item>
       <item>ife</item>
       <item>ifn</item>
       <item>ifg</item>
-      <item>ifb</item>
+      <item>ifa</item>
+      <item>ifl</item>
+      <item>ifu</item>
+      <item>adx</item>
+      <item>sbx</item>
+      <!-- special opcodes -->
       <item>jsr</item>
+      <item>hcf</item>
+      <item>int</item>
+      <item>iag</item>
+      <item>ias</item>
+      <item>hwn</item>
+      <item>hwq</item>
+      <item>hwi</item>
     </list>
     
     <contexts>
